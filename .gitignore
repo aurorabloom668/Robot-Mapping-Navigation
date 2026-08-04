@@ -1,0 +1,43 @@
+# =========================
+# Whitelist-style gitignore
+# 仅上传当前建图导航项目用到的文件
+# =========================
+
+# Ignore everything by default / 默认忽略全部
+/*
+
+# Keep gitignore itself / 保留本文件
+!/.gitignore
+
+# Keep basic project metadata / 保留基础项目信息
+!/LICENSE
+!/README.md
+!/README_CN.md
+!/VERSION
+
+# Keep API reference doc used by this project / 保留本项目参考的API文档
+!/docs/
+/docs/*
+!/docs/API_Quanta_X1.md
+
+# Keep examples directory, then whitelist needed scripts / 保留examples目录后按需放行
+!/examples/
+/examples/*
+
+# Core dependency from examples / 建图脚本依赖的通用控制脚本
+!/examples/chassis_control.py
+
+# Keep map_navigation folder and only needed files / 仅放行map_navigation用到文件
+!/examples/map_navigation/
+/examples/map_navigation/*
+!/examples/map_navigation/mapping.py
+!/examples/map_navigation/navigation_rviz.py
+!/examples/map_navigation/run_in_ros_env.sh
+!/examples/map_navigation/run_native_rviz.sh
+!/examples/map_navigation/mapping.rviz
+
+# Safety ignores (even if patterns above are expanded later) / 安全兜底忽略
+.venv/
+**/__pycache__/
+*.pyc
+*.pyo
